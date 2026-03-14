@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowLeft, FileJson} from "lucide-react";
-import { ImportWordForm } from "../../components/Dico/ImportWordForm";
+import { ImportWordForm } from "../../../components/Dico/ImportWordForm";
 import { Link } from "react-router-dom";
 
 export const ImportWordPage = () => {
@@ -48,7 +48,7 @@ export const ImportWordPage = () => {
         💡 Assure-toi que ton fichier contient les clés suivantes :
         <br />
         <code className="bg-gray-200 dark:bg-gray-800 px-1 rounded">
-          sourceWord, translatedWord, sourceLanguage, targetLanguage, wordType
+          sourceWord, translatedWord, sourceLanguage, targetLanguage, wordType, themes
         </code>
       </p>
     </div>

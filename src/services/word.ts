@@ -15,7 +15,7 @@ export async function updateWord(uuid: string, data: WordUpdateForm) {
   return await api.update<WordUpdateForm, Word>(
     ContentType.WORDS,
     data,
-    `/${uuid}`
+    `/${uuid}`,
   );
 }
 
@@ -36,4 +36,17 @@ export async function importWord(words: CreateWord[]) {
     CreateWord[],
     { created: number; skipped: number; error: Array<string>; message: string }
   >(ContentType.WORDS, words, "/import");
+}
+
+export async function getAllThemesWords() {
+  return await api.get<string[]>(ContentType.WORDS, "/themes/all");
+}
+
+export async function getWordsByTheme(theme: string) {
+  /* create = POST */
+  return await api.create<{ theme: string }, Word[]>(
+    ContentType.WORDS,
+    { theme },
+    "/themes/dico",
+  );
 }

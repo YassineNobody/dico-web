@@ -1,6 +1,6 @@
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
-import { CreateWordForm } from "../../components/Dico/CreateWordForm";
+import { CreateWordForm } from "../../../components/Dico/CreateWordForm";
 import { motion } from "framer-motion";
 
 export const AddSingleWordPage = () => {

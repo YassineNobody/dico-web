@@ -18,7 +18,6 @@ export const LearnReadOnly: FC<LearnReadOnlyProps> = ({
   selected,
 }) => {
   const { menu } = useMenuLearn();
-  console.log(selected);
   return (
     <div className="relative flex flex-col">
       {/* 🔹 Menu flottant (en haut à droite) */}
@@ -30,7 +29,7 @@ export const LearnReadOnly: FC<LearnReadOnlyProps> = ({
       />
 
       {/* 🔹 En-tête du cours */}
-      <div className="py-6 px-4 flex flex-col items-center justify-center text-center relative">
+      <div className="py-6 px-4 flex flex-col md:mt-0 mt-10 items-center justify-center text-center relative">
         <motion.h1
           initial={{ opacity: 0, y: -15 }}
           animate={{ opacity: 1, y: 0 }}

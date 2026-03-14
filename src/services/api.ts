@@ -11,6 +11,8 @@ export const ContentType = {
   LEARN_CATEGORIES: "learn-categories",
   LEARN: "learns",
   SETTINGS_USER: "settings",
+  FOLDERS: "folders",
+  TEXT_FOLDERS: "text-folder",
 };
 export type ContentType = (typeof ContentType)[keyof typeof ContentType];
 
@@ -34,7 +36,7 @@ class Api {
         }
         return config;
       },
-      (error) => Promise.reject(error)
+      (error) => Promise.reject(error),
     );
 
     // Response Interceptor
@@ -43,7 +45,7 @@ class Api {
       (error) => {
         console.log(error);
         return Promise.reject(error.response.data);
-      }
+      },
     );
   }
 
@@ -86,7 +88,7 @@ class Api {
   async get<R>(
     contentType: ContentType,
     endPoint?: string,
-    params?: QueryParams
+    params?: QueryParams,
   ) {
     return this.request
       .get<void, R>(`/api/${contentType}${endPoint ? endPoint : ""}`, {
@@ -109,7 +111,7 @@ class Api {
     contentType: ContentType,
     data: T,
     endPoint?: string,
-    params?: QueryParams
+    params?: QueryParams,
   ) {
     return this.request
       .put<void, R>(`/api/${contentType}${endPoint ? endPoint : ""}`, data, {
@@ -123,7 +125,7 @@ class Api {
   async delete<T>(
     contentType: ContentType,
     endPoint?: string,
-    params?: QueryParams
+    params?: QueryParams,
   ) {
     return this.request
       .delete<void, T>(`/api/${contentType}${endPoint ? endPoint : ""}`, {
@@ -135,4 +137,4 @@ class Api {
   }
 }
 
-export const api = new Api(constants.URL_API);
+export const api = new Api(constants.URL_API_DE);

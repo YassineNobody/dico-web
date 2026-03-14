@@ -47,9 +47,19 @@ const Navbar = () => {
                 ariaLabel: "Mon dico",
               },
               {
+                label:"Dico par thèmes",
+                href:"/dico/themes",
+                ariaLabel: "Dico par thèmes"
+              },
+              {
                 label: "Ajouter dans mon dico",
                 href: "/dico/add-choice",
                 ariaLabel: "Ajouter dans mon dico",
+              },
+              {
+                label: "Quiz",
+                href: "/quiz",
+                ariaLabel: "Quiz",
               },
             ]
           : []),
@@ -62,6 +72,11 @@ const Navbar = () => {
             bgColor: "#1A1022",
             textColor: "#fff",
             links: [
+              {
+                label: "Mes dossiers",
+                href: "/folders",
+                ariaLabel: "Mes dossiers"
+              },
               {
                 label: "Mon tableau de bord",
                 href: "/dashboard",

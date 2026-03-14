@@ -19,6 +19,7 @@ export interface Word {
   wordType: WordType;
   createdAt?: string;
   sourceWord: string;
+  themes: string[];
   translationWord: string;
   normalizedWord: string;
 
@@ -49,5 +50,6 @@ export interface CreateWord {
   targetLanguage: "FR" | "AR";
   wordType: WordType;
   sourceWord: string;
+  themes: string[];
   translationWord: string;
 }
