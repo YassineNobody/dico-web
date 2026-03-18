@@ -21,7 +21,7 @@ import { AddSingleWordPage } from "./pages/DicoPage/Dico/AddSingleWordPage";
 import { ImportWordPage } from "./pages/DicoPage/Dico/ImportWordPage";
 import { SettingsUserProvider } from "./hooks/useSettingsUser";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import QuizPage from "./pages/QuizPage/QuizPage";
+//import QuizPage from "./pages/QuizPage/QuizPage";
 import { WordsThemesProvider } from "./hooks/useWordsThemes";
 import { DicoThemesPage } from "./pages/DicoPage/Themes/DicoThemesPage";
 import { FolderPage } from "./pages/FolderPage/FolderPage";
