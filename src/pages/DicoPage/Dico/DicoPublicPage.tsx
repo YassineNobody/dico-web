@@ -1,16 +1,15 @@
-import { useQuery } from "@tanstack/react-query";
-import { getAllWords } from "../../services/word";
-import { LoadingMessage } from "../../components/Loader/LoadingMessage";
-import type { ErrorResponse } from "../../interfaces/common";
-import { DicoPublic } from "../../components/Dico/DicoPublicList";
+import { LoadingMessage } from "../../../components/Loader/LoadingMessage";
+import type { ErrorResponse } from "../../../interfaces/common";
+import { DicoPublic } from "../../../components/Dico/DicoPublicList";
+import { useDico } from "../../../hooks/useDico";
 
 export const DicoPublicPage = () => {
-  const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["dico-public"],
-    queryFn: async () => await getAllWords(),
-    retry: false,
-    staleTime: 1000 * 60 * 5,
-  });
+  const {
+    dicoPublic: data,
+    isErrorPublic: isError,
+    errorPublic: error,
+    isLoadingPublic: isLoading,
+  } = useDico();
 
   if (isLoading) {
     return (

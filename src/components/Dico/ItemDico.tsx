@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { transliterate } from "transliteration";
 import type { Word } from "../../interfaces/dico/word";
 import {
   BookOpen,
@@ -17,6 +18,7 @@ import { useAuth } from "../../hooks/useAuth";
 import { useModal } from "../../hooks/useModal";
 import { ModalUpdateWord } from "../Modal/Form/ModalUpdateWord";
 import { ModalDeleteWord } from "../Modal/Form/ModalDeleteWord";
+import { Phonetic } from "./Phonetic";
 
 const colorOptions = {
   bleu: "text-blue-700 dark:text-blue-400",
@@ -62,7 +64,6 @@ export const ItemDico = ({
       props: { onClose: hideModal, word },
     });
   };
-
   // 🧩 Synchroniser les props avec le state
   useEffect(() => {
     setFontSize(initialFontSize);
@@ -75,6 +76,15 @@ export const ItemDico = ({
   const sourceL = word.sourceLanguage === "FR" ? "Français" : "Arabe";
   const targetL = word.targetLanguage === "FR" ? "Français" : "Arabe";
   const typeLabel = mapWordType(word.wordType);
+
+  const arabicWord =
+    word.sourceLanguage === "AR"
+      ? word.sourceWord
+      : word.targetLanguage === "AR"
+        ? word.translationWord
+        : null;
+
+  const phonetic = arabicWord ? transliterate(arabicWord) : null;
 
   const handleFontSizeChange = (newSize: number) => {
     const clamped = Math.max(14, Math.min(50, newSize));
@@ -158,8 +168,8 @@ export const ItemDico = ({
                         c === "bleu"
                           ? "bg-blue-600"
                           : c === "green"
-                          ? "bg-green-600"
-                          : "bg-black"
+                            ? "bg-green-600"
+                            : "bg-black"
                       }`}
                     />
                   ))}
@@ -197,14 +207,17 @@ export const ItemDico = ({
             </span>
           </div>
         </div>
-
         {word.normalizedWord && (
-          <div className="mt-3 flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
-            <BookOpen size={16} />
-            <span>
-              <span className="font-medium">Arabe sans voyelles :</span>{" "}
-              {word.normalizedWord}
+          <div className="mt-3 flex items-center justify-between text-sm text-gray-600 dark:text-gray-300">
+            <span className="flex items-center gap-2">
+              <BookOpen size={16} />
+              <span>
+                <span className="font-medium">Arabe sans voyelles :</span>{" "}
+                {word.normalizedWord}
+              </span>
             </span>
+
+            {phonetic && <Phonetic phonetic={phonetic} />}
           </div>
         )}
 

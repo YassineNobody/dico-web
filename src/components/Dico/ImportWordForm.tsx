@@ -58,6 +58,7 @@ export const ImportWordForm = () => {
           "translationWord",
           "targetLanguage",
           "wordType",
+          "themes",
         ];
 
         const hasAllKeys = keys.every((k) => Object.hasOwn(item, k));
@@ -66,22 +67,22 @@ export const ImportWordForm = () => {
             `❌ Ligne ${
               index + 1
             }: il manque une ou plusieurs clés obligatoires (${keys.join(
-              ", "
-            )})`
+              ", ",
+            )})`,
           );
           return;
         }
 
         if (!VALID_LANGS.includes(item.sourceLanguage)) {
           setError(
-            `❌ Ligne ${index + 1}: "sourceLanguage" doit être "AR" ou "FR"`
+            `❌ Ligne ${index + 1}: "sourceLanguage" doit être "AR" ou "FR"`,
           );
           return;
         }
 
         if (!VALID_LANGS.includes(item.targetLanguage)) {
           setError(
-            `❌ Ligne ${index + 1}: "targetLanguage" doit être "AR" ou "FR"`
+            `❌ Ligne ${index + 1}: "targetLanguage" doit être "AR" ou "FR"`,
           );
           return;
         }
@@ -90,7 +91,7 @@ export const ImportWordForm = () => {
           setError(
             `❌ Ligne ${index + 1}: "wordType" (${
               item.wordType
-            }) n’est pas valide`
+            }) n’est pas valide`,
           );
           return;
         }
@@ -152,7 +153,7 @@ export const ImportWordForm = () => {
             Format attendu : tableau d’objets avec{" "}
             <code className="bg-gray-200 dark:bg-gray-800 px-1 rounded">
               sourceWord, translationWord, sourceLanguage, targetLanguage,
-              wordType
+              wordType, themes
             </code>
           </p>
         </div>

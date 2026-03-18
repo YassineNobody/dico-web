@@ -1,5 +1,5 @@
 export interface Learn {
-  id: string;
+  id: number;
   title: string;
   slug: string;
   urlPdf: string;

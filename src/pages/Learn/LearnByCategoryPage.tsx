@@ -74,6 +74,8 @@ export const LearnByCategoryPage = () => {
   if (mode === "readonly" && ref && !selectedCourse) {
     return <Navigate to={`/learn-arabic/${slug}?mode=box`} replace />;
   }
+
+  console.log("ici")
   // 🧱 Rendu principal
   return (
     <div className="flex-1 pt-24 px-4 sm:px-6 flex flex-col">

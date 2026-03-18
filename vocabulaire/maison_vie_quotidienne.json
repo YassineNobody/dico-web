@@ -1,0 +1,483 @@
+[
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "maison",
+    "translationWord": "بَيْتٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "appartement",
+    "translationWord": "شَقَّةٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "chambre",
+    "translationWord": "غُرْفَةٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "chambre à coucher",
+    "translationWord": "غُرْفَةُ النَّوْمِ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "salon",
+    "translationWord": "صَالَةٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "cuisine",
+    "translationWord": "مَطْبَخٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "salle de bain",
+    "translationWord": "حَمَّامٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "toilettes",
+    "translationWord": "مِرْحَاضٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "balcon",
+    "translationWord": "شُرْفَةٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "terrasse / toit",
+    "translationWord": "سَطْحٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "couloir",
+    "translationWord": "مَمَرٌّ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "escalier",
+    "translationWord": "سُلَّمٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "entrée",
+    "translationWord": "مَدْخَلٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "porte",
+    "translationWord": "بَابٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "fenêtre",
+    "translationWord": "نَافِذَةٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "mur",
+    "translationWord": "جِدَارٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "sol",
+    "translationWord": "أَرْضِيَّةٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "plafond",
+    "translationWord": "سَقْفٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "débarras",
+    "translationWord": "مَخْزَنٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "cour intérieure",
+    "translationWord": "فِنَاءٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "chaise",
+    "translationWord": "كُرْسِيٌّ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "table",
+    "translationWord": "طَاوِلَةٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "lit",
+    "translationWord": "سَرِيرٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "armoire",
+    "translationWord": "خِزَانَةٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "lampe",
+    "translationWord": "مِصْبَاحٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "horloge / montre",
+    "translationWord": "سَاعَةٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "miroir",
+    "translationWord": "مِرْآةٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "tapis",
+    "translationWord": "سِجَّادَةٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "oreiller",
+    "translationWord": "وِسَادَةٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "couverture",
+    "translationWord": "بَطَّانِيَّةٌ",
+    "themes": ["maison"]
+  },
+
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "propre",
+    "translationWord": "نَظِيفٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "sale",
+    "translationWord": "مُتَّسِخٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "spacieux",
+    "translationWord": "وَاسِعٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "étroit",
+    "translationWord": "ضَيِّقٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "nouveau",
+    "translationWord": "جَدِيدٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "ancien",
+    "translationWord": "قَدِيمٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "rangé",
+    "translationWord": "مُرَتَّبٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "vide",
+    "translationWord": "فَارِغٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "plein",
+    "translationWord": "مُمْتَلِئٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "confortable",
+    "translationWord": "مُرِيحٌ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "entrer",
+    "translationWord": "دَخَلَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "sortir",
+    "translationWord": "خَرَجَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "s’asseoir",
+    "translationWord": "جَلَسَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "se lever",
+    "translationWord": "قَامَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "dormir",
+    "translationWord": "نَامَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "se réveiller",
+    "translationWord": "اِسْتَيْقَظَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "manger",
+    "translationWord": "أَكَلَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "boire",
+    "translationWord": "شَرِبَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "cuisiner",
+    "translationWord": "طَبَخَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "laver",
+    "translationWord": "غَسَلَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "nettoyer",
+    "translationWord": "نَظَّفَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "ouvrir",
+    "translationWord": "فَتَحَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "fermer",
+    "translationWord": "أَغْلَقَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "rassembler",
+    "translationWord": "جَمَعَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "ranger",
+    "translationWord": "رَتَّبَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "allumer / faire fonctionner",
+    "translationWord": "شَغَّلَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "éteindre",
+    "translationWord": "أَطْفَأَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "attendre",
+    "translationWord": "اِنْتَظَرَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "utiliser",
+    "translationWord": "اِسْتَعْمَلَ",
+    "themes": ["maison"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "laisser",
+    "translationWord": "تَرَكَ",
+    "themes": ["maison"]
+  }
+]

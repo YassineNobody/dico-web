@@ -5,7 +5,6 @@ import Navbar from "../Navbar/Navbar";
 const Layout: FC = () => {
   const location = useLocation();
   const isHome = location.pathname === "/";
-  console.log(isHome)
   return (
     <div className={isHome ? "min-h-screen bg-black": "min-h-screen bg-white dark:bg-blue-950 flex flex-col"}>
       <Navbar />
