@@ -21,7 +21,7 @@ import { AddSingleWordPage } from "./pages/DicoPage/Dico/AddSingleWordPage";
 import { ImportWordPage } from "./pages/DicoPage/Dico/ImportWordPage";
 import { SettingsUserProvider } from "./hooks/useSettingsUser";
 import NotFoundPage from "./pages/NotFoundPage/NotFoundPage";
-import { QuizPage } from "./pages/DicoPage/Quiz/QuizPage";
+import QuizPage from "./pages/QuizPage/QuizPage";
 import { WordsThemesProvider } from "./hooks/useWordsThemes";
 import { DicoThemesPage } from "./pages/DicoPage/Themes/DicoThemesPage";
 import { FolderPage } from "./pages/FolderPage/FolderPage";
@@ -29,6 +29,7 @@ import { FoldersProvider } from "./hooks/useFolders";
 import { FolderBySlugPage } from "./pages/FolderPage/FolderBySlugPage";
 import { TextFolderEditPage } from "./pages/FolderPage/TextFolderEditPage";
 import { DicoContextProvider } from "./hooks/useDico";
+import FlashcardsPage from "./pages/FlashcardPage/FlashcardsPage";
 
 const client = new QueryClient();
 function App() {
@@ -133,15 +134,6 @@ function App() {
                             path="learn-arabic/lessons"
                             element={<LearnAllLessonsPage />}
                           />
-                          {/* Quiz */}
-                          <Route
-                            path="quiz"
-                            element={
-                              <ProtectedRoute>
-                                <QuizPage />
-                              </ProtectedRoute>
-                            }
-                          />
                           {/* Folders */}
                           <Route
                             path="folders"
@@ -164,6 +156,24 @@ function App() {
                             element={
                               <ProtectedRoute>
                                 <TextFolderEditPage />
+                              </ProtectedRoute>
+                            }
+                          />
+                          {/* Quiz */}
+                          {/*                           <Route
+                            path="quiz"
+                            element={
+                              <ProtectedRoute>
+                                <QuizPage />
+                              </ProtectedRoute>
+                            }
+                          /> */}
+                          {/* Flashcards */}
+                          <Route
+                            path="flashcards"
+                            element={
+                              <ProtectedRoute>
+                                <FlashcardsPage />
                               </ProtectedRoute>
                             }
                           />

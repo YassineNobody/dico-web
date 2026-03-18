@@ -27,6 +27,21 @@ const Navbar = () => {
           href: "/learn-arabic/lessons",
           ariaLabel: "Tous les cours",
         },
+
+        ...(isAuthenticated
+          ? [
+/*               {
+                label: "Quiz",
+                href: "/quiz",
+                ariaLabel: "Quiz",
+              }, */
+              {
+                label: "Flashcards",
+                href: "/flashcards",
+                ariaLabel: "Flashcards",
+              },
+            ]
+          : []),
       ],
     },
     {
@@ -47,19 +62,14 @@ const Navbar = () => {
                 ariaLabel: "Mon dico",
               },
               {
-                label:"Dico par thèmes",
-                href:"/dico/themes",
-                ariaLabel: "Dico par thèmes"
+                label: "Dico par thèmes",
+                href: "/dico/themes",
+                ariaLabel: "Dico par thèmes",
               },
               {
                 label: "Ajouter dans mon dico",
                 href: "/dico/add-choice",
                 ariaLabel: "Ajouter dans mon dico",
-              },
-              {
-                label: "Quiz",
-                href: "/quiz",
-                ariaLabel: "Quiz",
               },
             ]
           : []),
@@ -75,7 +85,7 @@ const Navbar = () => {
               {
                 label: "Mes dossiers",
                 href: "/folders",
-                ariaLabel: "Mes dossiers"
+                ariaLabel: "Mes dossiers",
               },
               {
                 label: "Mon tableau de bord",

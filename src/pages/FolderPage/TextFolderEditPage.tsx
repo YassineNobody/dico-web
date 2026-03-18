@@ -10,44 +10,20 @@ import {
 import type { FolderMenu } from "../../interfaces/folder/folder";
 import type { TextFolder } from "../../interfaces/folder/textFolder";
 import { EditorTextFolder } from "../../components/Editor/EditorTextFolder";
-import { MenuTextEditFolder } from "../../components/Editor/components/MenuTextEditFolder";
+import { MenuTextEditFolder } from "../../components/Editor/components/componentsMenu/MenuTextEditFolder";
 
 export const TextFolderEditPage = () => {
   const { folderSlug, textSlug } = useParams();
+  const { folders, isLoading } = useFolders();
 
   const navigate = useNavigate();
   const queryClient = useQueryClient();
 
-  const { folders, isLoading } = useFolders();
-
   const [isEditing, setIsEditing] = useState(false);
   const [title, setTitle] = useState("");
 
-  /*
-  =========================
-  ROUTE GUARDS
-  =========================
-  */
-
-  if (!folderSlug || !textSlug) {
-    return <Navigate to="/folders" replace />;
-  }
-
-  if (isLoading) {
-    return null;
-  }
-
   const folder = folders.find((f) => f.slug === folderSlug);
-
-  if (!folder) {
-    return <Navigate to="/folders" replace />;
-  }
-
-  const textMeta = folder.texts.find((t) => t.slug === textSlug);
-
-  if (!textMeta) {
-    return <Navigate to={`/folders/${folderSlug}`} replace />;
-  }
+  const textMeta = folder?.texts.find((t) => t.slug === textSlug);
 
   /*
   =========================
@@ -56,13 +32,10 @@ export const TextFolderEditPage = () => {
   */
 
   const { data: textContent, isLoading: isTextLoading } = useQuery({
-    queryKey: ["text", folder.id, textMeta.slug],
-    queryFn: () => getTextsFolderById(folder.id, textMeta.slug),
+    queryKey: ["text", folder?.id, textMeta?.slug],
+    queryFn: () => getTextsFolderById(folder!.id, textMeta!.slug),
+    enabled: !!folder && !!textMeta,
   });
-
-  if (isTextLoading) {
-    return null;
-  }
 
   /*
   =========================
@@ -79,11 +52,7 @@ export const TextFolderEditPage = () => {
       folderId: number;
       slug: string;
       newTitle: string;
-    }) =>
-      updateTextFolder(folderId, slug, {
-        title: newTitle,
-        slug,
-      }),
+    }) => updateTextFolder(folderId, slug, { title: newTitle, slug }),
 
     onSuccess: (data: TextFolder) => {
       queryClient.setQueryData<FolderMenu[]>(["folders"], (old) => {
@@ -106,6 +75,32 @@ export const TextFolderEditPage = () => {
       navigate(`/folders/${folderSlug}/${data.slug}`, { replace: true });
     },
   });
+
+  /*
+  =========================
+  ROUTE GUARDS
+  =========================
+  */
+
+  if (!folderSlug || !textSlug) {
+    return <Navigate to="/folders" replace />;
+  }
+
+  if (isLoading) {
+    return null;
+  }
+
+  if (!folder) {
+    return <Navigate to="/folders" replace />;
+  }
+
+  if (!textMeta) {
+    return null;
+  }
+
+  if (isTextLoading) {
+    return null;
+  }
 
   /*
   =========================
@@ -143,15 +138,13 @@ export const TextFolderEditPage = () => {
 
   return (
     <div className="pt-26 flex-1 flex flex-col bg-white dark:bg-black text-black dark:text-white">
-      {/* TOP MENU */}
-      <div className="px-4 py-2 border-b flex items-center">
+      <div className="px-4 py-2 flex items-center">
         <MenuTextEditFolder
           folder={folder}
           folderSlug={folderSlug}
           currentTextSlug={textMeta.slug}
         />
       </div>
-
       {/* HEADER */}
       <div className="px-4 py-3 border-b flex items-center gap-3">
         {isEditing ? (
@@ -183,7 +176,6 @@ export const TextFolderEditPage = () => {
       {/* EDITOR */}
       <div className="flex-1 p-4 flex flex-col">
         <EditorTextFolder
-          key={textMeta.slug}
           content={textContent?.content ?? ""}
           folder={folder}
           slugText={textMeta.slug}

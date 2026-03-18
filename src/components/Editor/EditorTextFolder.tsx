@@ -5,10 +5,20 @@ import { Color, TextStyle } from "@tiptap/extension-text-style";
 import { FontSize } from "./extensions/fontSize";
 import { FontFamily } from "./extensions/fontFamily";
 import Underline from "@tiptap/extension-underline";
-import { EditableContent } from "./components/EditableContent";
+import { EditableContent } from "./components/componentsEditor/EditableContent";
 import type { FolderMenu } from "../../interfaces/folder/folder";
+import { DictionaryExtension } from "./extensions/dictionary/DictionaryExtension";
+import { DictionaryPanel } from "./components/Dictionary/DictionaryPanel";
 
-export const EditorTextFolder = ({ content, folder, slugText }: { content: string, folder:FolderMenu, slugText:string }) => {
+export const EditorTextFolder = ({
+  content,
+  folder,
+  slugText,
+}: {
+  content: string;
+  folder: FolderMenu;
+  slugText: string;
+}) => {
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -20,6 +30,7 @@ export const EditorTextFolder = ({ content, folder, slugText }: { content: strin
       FontSize,
       FontFamily,
       Color,
+      DictionaryExtension,
     ],
 
     content: content.trim() ? content : "<p>Commence à écrire...</p>",
@@ -36,8 +47,9 @@ export const EditorTextFolder = ({ content, folder, slugText }: { content: strin
   if (!editor) return null;
 
   return (
-    <div className="w-full flex-1 flex flex-col gap-3">
+    <div className="w-full flex-1 flex flex-col gap-3 relative">
       <EditableContent editor={editor} folder={folder} slugText={slugText} />
+      <DictionaryPanel editor={editor} />
     </div>
   );
 };

@@ -1,16 +1,10 @@
-import { useQuery } from "@tanstack/react-query";
-import { getWordsByTheme } from "../../services/word";
 import { LoadingMessage } from "../Loader/LoadingMessage";
 import type { ErrorResponse } from "../../interfaces/common";
 import { DicoPublic } from "../Dico/DicoPublicList";
+import { useWordsByTheme } from "../../hooks/useWordsByTheme";
 
 export const DicoThemeWords = ({ theme }: { theme: string }) => {
-  const { data, error, isError, isLoading } = useQuery({
-    queryKey: ["theme-words", theme],
-    queryFn: async () => await getWordsByTheme(theme),
-    enabled: !!theme,
-    staleTime: 1000 * 60 * 10,
-  });
+  const { data, error, isError, isLoading } = useWordsByTheme(theme);
   if (isLoading) {
     return (
       <div className="flex-1  flex flex-col items-center justify-center">

@@ -7,7 +7,8 @@ import {
 } from "@headlessui/react";
 import { ArrowLeft, Folder, FileText, Menu as MenuIcon } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-import type { FolderMenu } from "../../../interfaces/folder/folder";
+import type { FolderMenu } from "../../../../interfaces/folder/folder";
+
 
 type Props = {
   folder: FolderMenu;

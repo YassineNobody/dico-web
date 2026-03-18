@@ -4,8 +4,8 @@ import { Toolbar } from "./ToolbarEditor";
 import { Eye, Pencil, Save } from "lucide-react";
 import debounce from "lodash.debounce";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { updateTextFolder } from "../../../services/textFolder";
-import type { FolderMenu } from "../../../interfaces/folder/folder";
+import type { FolderMenu } from "../../../../interfaces/folder/folder";
+import { updateTextFolder } from "../../../../services/textFolder";
 
 type Props = {
   editor: Editor | null;

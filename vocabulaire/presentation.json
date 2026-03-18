@@ -1,0 +1,482 @@
+[
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "nom",
+    "translationWord": "اِسْمٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "prénom",
+    "translationWord": "اِسْمٌ أَوَّلٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "nom de famille",
+    "translationWord": "لَقَبٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "nationalité",
+    "translationWord": "جِنْسِيَّةٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "pays",
+    "translationWord": "بَلَدٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "ville",
+    "translationWord": "مَدِينَةٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "naissance",
+    "translationWord": "مَوْلِدٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "âge",
+    "translationWord": "عُمْرٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "âge (synonyme)",
+    "translationWord": "سِنٌّ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "métier",
+    "translationWord": "مِهْنَةٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "emploi",
+    "translationWord": "وَظِيفَةٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "situation familiale",
+    "translationWord": "حَالَةٌ اِجْتِمَاعِيَّةٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "célibataire (masculin)",
+    "translationWord": "أَعْزَبُ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "célibataire (féminin)",
+    "translationWord": "عَزْبَاءُ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "marié",
+    "translationWord": "مُتَزَوِّجٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "mariée",
+    "translationWord": "مُتَزَوِّجَةٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "passion",
+    "translationWord": "هِوَايَةٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "sport",
+    "translationWord": "رِيَاضَةٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "caractère",
+    "translationWord": "طَبْعٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "personnalité",
+    "translationWord": "شَخْصِيَّةٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "famille proche",
+    "translationWord": "أُسْرَةٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "famille large",
+    "translationWord": "عَائِلَةٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "ami (masculin)",
+    "translationWord": "صَدِيقٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "amie (féminin)",
+    "translationWord": "صَدِيقَةٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "voisin",
+    "translationWord": "جَارٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "collègue",
+    "translationWord": "زَمِيلٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "commerçant",
+    "translationWord": "تَاجِرٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "docteur",
+    "translationWord": "طَبِيبٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "ingénieur",
+    "translationWord": "مُهَنْدِسٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "cuisinier",
+    "translationWord": "طَبَّاخٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "professeur",
+    "translationWord": "مُدَرِّسٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "noun",
+    "sourceWord": "avocat",
+    "translationWord": "مُحَامٍ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "aimer",
+    "translationWord": "أَحَبَّ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "détester",
+    "translationWord": "كَرِهَ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "préférer",
+    "translationWord": "فَضَّلَ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "travailler",
+    "translationWord": "عَمِلَ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "étudier",
+    "translationWord": "دَرَسَ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "voyager",
+    "translationWord": "سَافَرَ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "savoir",
+    "translationWord": "عَلِمَ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "comprendre",
+    "translationWord": "فَهِمَ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "grand",
+    "translationWord": "طَوِيلٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "petit",
+    "translationWord": "قَصِيرٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "mince",
+    "translationWord": "نَحِيفٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "gros",
+    "translationWord": "سَمِينٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "beau",
+    "translationWord": "جَمِيلٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "laid",
+    "translationWord": "قَبِيحٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "calme",
+    "translationWord": "هَادِئٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "nerveux",
+    "translationWord": "عَصَبِيٌّ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "intelligent",
+    "translationWord": "ذَكِيٌّ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "stupide",
+    "translationWord": "غَبِيٌّ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "gentil",
+    "translationWord": "لَطِيفٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "adjective",
+    "sourceWord": "bon, aimable",
+    "translationWord": "طَيِّبٌ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "parler",
+    "translationWord": "تَكَلَّمَ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "dire",
+    "translationWord": "قَالَ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "voir",
+    "translationWord": "رَأَى",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "entendre",
+    "translationWord": "سَمِعَ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "regarder",
+    "translationWord": "نَظَرَ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "écrire",
+    "translationWord": "كَتَبَ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "demander",
+    "translationWord": "سَأَلَ",
+    "themes": ["présentation"]
+  },
+  {
+    "sourceLanguage": "FR",
+    "targetLanguage": "AR",
+    "wordType": "verb",
+    "sourceWord": "désirer / vouloir fortement",
+    "translationWord": "رَغِبَ",
+    "themes": ["présentation"]
+  }
+]

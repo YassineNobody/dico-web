@@ -13,6 +13,8 @@ export const ContentType = {
   SETTINGS_USER: "settings",
   FOLDERS: "folders",
   TEXT_FOLDERS: "text-folder",
+  FLASHCARD: "flashcard",
+  QUIZ: "quiz",
 };
 export type ContentType = (typeof ContentType)[keyof typeof ContentType];
 
@@ -137,4 +139,4 @@ class Api {
   }
 }
 
-export const api = new Api(constants.URL_API_DE);
+export const api = new Api(constants.URL_API);
