@@ -3,7 +3,7 @@ import { DicoThemesBox } from "../../../components/DicoThemes/DicoThemesBox";
 import { useWordsThemes } from "../../../hooks/useWordsThemes";
 import { DicoThemeWords } from "../../../components/DicoThemes/DicoThemeWords";
 
-export const DicoThemesPage = () => {
+export default function DicoThemesPage ()  {
   const [selected, onSelected] = useState<null | string>(null);
   const { wordsThemes } = useWordsThemes();
 

@@ -3,7 +3,7 @@ import { ArrowLeft, FileJson} from "lucide-react";
 import { ImportWordForm } from "../../../components/Dico/ImportWordForm";
 import { Link } from "react-router-dom";
 
-export const ImportWordPage = () => {
+export default function ImportWordPage () {
   return (
     <div className="flex-1 flex min-h-screen f-hull flex-col items-center justify-center px-4 py-32 bg-linear-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950 relative">
       {/* 🔙 Bouton retour */}

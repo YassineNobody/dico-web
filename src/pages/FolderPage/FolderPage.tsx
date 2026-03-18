@@ -6,7 +6,7 @@ import { ModalSearchFolderForm } from "../../components/Modal/Form/ModalSearchFo
 import { useFolders } from "../../hooks/useFolders";
 import { FolderItem } from "../../components/Folder/FolderItem";
 
-export const FolderPage = () => {
+const FolderPage = () => {
   const { showModal, hideModal } = useModal();
   const { folders } = useFolders();
 
@@ -92,3 +92,5 @@ export const FolderPage = () => {
     </div>
   );
 };
+
+export default FolderPage;

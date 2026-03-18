@@ -7,7 +7,7 @@ import { LoadingMessage } from "../../components/Loader/LoadingMessage";
 import { LearnBox } from "../../components/Learn/LearnBox";
 import { LearnReadOnly } from "../../components/Learn/LearnReadOnly";
 
-export const LearnByCategoryPage = () => {
+ const LearnByCategoryPage = () => {
   const { slug } = useParams();
   const { menu } = useMenuLearn();
   const [searchParams] = useSearchParams();
@@ -87,3 +87,4 @@ export const LearnByCategoryPage = () => {
     </div>
   );
 };
+export default LearnByCategoryPage;

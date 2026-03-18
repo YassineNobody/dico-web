@@ -2,7 +2,7 @@ import LiquidEther from "../../components/Home/BackgroundHome";
 import { HomeContent } from "../../components/Home/HomeContent";
 import { SectionHome } from "../../components/Home/SectionHome";
 
-export const HomePage = () => {
+ const HomePage = () => {
   return (
     <div className="">
       {/* 🌊 Fond WebGL */}
@@ -33,3 +33,6 @@ export const HomePage = () => {
     </div>
   );
 };
+
+
+export default HomePage;

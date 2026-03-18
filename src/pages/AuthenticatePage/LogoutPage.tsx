@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useAuth } from "../../hooks/useAuth";
 import { LoadingMessage } from "../../components/Loader/LoadingMessage";
 
-export const LogoutPage = () => {
+ const LogoutPage = () => {
   const { logout } = useAuth();
 
   useEffect(() => {
@@ -15,3 +15,4 @@ export const LogoutPage = () => {
     </div>
   );
 };
+export default LogoutPage

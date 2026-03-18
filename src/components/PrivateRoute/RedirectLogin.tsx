@@ -6,7 +6,7 @@ interface ProtectedRouteProps {
   children: ReactNode;
 }
 
-export const PrivateRouterLoginAndRegister: FC<ProtectedRouteProps> = ({
+ const PrivateRouterLoginAndRegister: FC<ProtectedRouteProps> = ({
   children,
 }) => {
   const { isAuthenticated } = useAuth();
@@ -15,3 +15,4 @@ export const PrivateRouterLoginAndRegister: FC<ProtectedRouteProps> = ({
   }
   return <>{children}</>;
 };
+export default PrivateRouterLoginAndRegister;

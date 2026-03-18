@@ -5,7 +5,7 @@ import { StatisticWord } from "../../components/User/Statistic/StatisticWords";
 import { useAuth } from "../../hooks/useAuth";
 import { useSettingsUser } from "../../hooks/useSettingsUser";
 
-export const DashboardPage = () => {
+ const DashboardPage = () => {
   const { user } = useAuth();
   const { settings } = useSettingsUser();
 
@@ -28,3 +28,4 @@ export const DashboardPage = () => {
     </div>
   );
 };
+export default DashboardPage;
