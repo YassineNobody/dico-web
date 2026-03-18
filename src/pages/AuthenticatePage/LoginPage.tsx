@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { LoginForm } from "../../components/User/Form/LoginForm";
 
-export const LoginPage = () => {
+const LoginPage = () => {
   return (
     <div className="flex-1 flex flex-col justify-center items-center px-4 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
       <div className="w-full max-w-md bg-white dark:bg-gray-800 p-6 rounded-lg shadow border border-gray-200 dark:border-gray-700 flex flex-col items-center gap-6">
@@ -37,3 +37,4 @@ export const LoginPage = () => {
     </div>
   );
 };
+export default LoginPage;

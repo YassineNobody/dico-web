@@ -4,7 +4,7 @@ import type { ErrorResponse } from "../../interfaces/common";
 import { LoadingMessage } from "../../components/Loader/LoadingMessage";
 import { AllBoxLearn } from "../../components/Learn/AllBoxLearn";
 
-export const LearnAllLessonsPage = () => {
+ const LearnAllLessonsPage = () => {
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["learn-all"],
     queryFn: async () => await learnGetAll(),
@@ -46,3 +46,4 @@ export const LearnAllLessonsPage = () => {
     </div>
   );
 };
+export default LearnAllLessonsPage;

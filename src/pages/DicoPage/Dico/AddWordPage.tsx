@@ -2,7 +2,7 @@ import { GoArrowRight } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 
-export const AddWordPage = () => {
+export default function AddWordPage () {
   return (
     <div className="flex-1 flex flex-col items-center justify-center px-4 py-10 bg-linear-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950">
       <motion.div

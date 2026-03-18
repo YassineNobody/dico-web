@@ -12,7 +12,7 @@ import type { TextFolder } from "../../interfaces/folder/textFolder";
 import { EditorTextFolder } from "../../components/Editor/EditorTextFolder";
 import { MenuTextEditFolder } from "../../components/Editor/components/componentsMenu/MenuTextEditFolder";
 
-export const TextFolderEditPage = () => {
+ const TextFolderEditPage = () => {
   const { folderSlug, textSlug } = useParams();
   const { folders, isLoading } = useFolders();
 
@@ -184,3 +184,6 @@ export const TextFolderEditPage = () => {
     </div>
   );
 };
+
+
+export default TextFolderEditPage;

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { CreateWordForm } from "../../../components/Dico/CreateWordForm";
 import { motion } from "framer-motion";
 
-export const AddSingleWordPage = () => {
+ const AddSingleWordPage = () => {
   return (
     <div className="flex-1 flex flex-col items-center justify-center px-4 pt-26 bg-linear-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-950 relative">
       {/* 🔙 Bouton retour */}
@@ -43,3 +43,4 @@ export const AddSingleWordPage = () => {
     </div>
   );
 };
+export default AddSingleWordPage;

@@ -3,7 +3,7 @@ import { useFolders } from "../../hooks/useFolders";
 import { NavbarFolder } from "../../components/Folder/NavbarFolder";
 import { TextsFolderBox } from "../../components/Folder/TextsFolderBox";
 
-export const FolderBySlugPage = () => {
+export default function FolderBySlugPage ()  {
   const { slug } = useParams();
   const { folders, isLoading } = useFolders();
 

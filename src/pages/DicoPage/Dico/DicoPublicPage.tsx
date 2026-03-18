@@ -3,7 +3,7 @@ import type { ErrorResponse } from "../../../interfaces/common";
 import { DicoPublic } from "../../../components/Dico/DicoPublicList";
 import { useDico } from "../../../hooks/useDico";
 
-export const DicoPublicPage = () => {
+export default function DicoPublicPage () {
   const {
     dicoPublic: data,
     isErrorPublic: isError,

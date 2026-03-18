@@ -2,7 +2,7 @@ import { Earth } from "lucide-react";
 import { useMenuLearn } from "../../hooks/useMenuLearnCategories";
 import { ItemLearnCategoy } from "../../components/LearnCategories/ItemLearnCategory";
 
-export const LearnCategoriesPage = () => {
+ const LearnCategoriesPage = () => {
   const { menu } = useMenuLearn();
 
   return (
@@ -21,3 +21,4 @@ export const LearnCategoriesPage = () => {
     </div>
   );
 };
+export default LearnCategoriesPage;
