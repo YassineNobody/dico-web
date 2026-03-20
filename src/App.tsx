@@ -13,6 +13,7 @@ import { SettingsUserProvider } from "./hooks/useSettingsUser";
 import { WordsThemesProvider } from "./hooks/useWordsThemes";
 import { FoldersProvider } from "./hooks/useFolders";
 import { DicoContextProvider } from "./hooks/useDico";
+import { LoadingMessage } from "./components/Loader/LoadingMessage";
 
 /* 🔥 Lazy pages */
 const HomePage = lazy(() => import("./pages/HomePage/HomePage"));
@@ -57,6 +58,8 @@ const FlashcardsPage = lazy(
 );
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 
+const QuizPage = lazy(() => import("./pages/QuizPage/QuizPage"));
+
 const client = new QueryClient();
 
 function App() {
@@ -71,7 +74,13 @@ function App() {
                   <MenuLearnCategoriesProvider>
                     <ModalProvider>
                       {/* 🔥 Suspense ici */}
-                      <Suspense fallback={<div>Loading...</div>}>
+                      <Suspense
+                        fallback={
+                          <div className="min-h-screen flex flex-col justify-center items-center">
+                            <LoadingMessage />
+                          </div>
+                        }
+                      >
                         <Routes>
                           <Route path="/" element={<Layout />}>
                             <Route index element={<HomePage />} />
@@ -211,6 +220,16 @@ function App() {
                               element={
                                 <ProtectedRoute>
                                   <FlashcardsPage />
+                                </ProtectedRoute>
+                              }
+                            />
+
+                            {/* QuizPage */}
+                            <Route
+                              path="/quiz"
+                              element={
+                                <ProtectedRoute>
+                                  <QuizPage />
                                 </ProtectedRoute>
                               }
                             />

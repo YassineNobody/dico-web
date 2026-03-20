@@ -30,11 +30,11 @@ const Navbar = () => {
 
         ...(isAuthenticated
           ? [
-/*               {
+              {
                 label: "Quiz",
                 href: "/quiz",
                 ariaLabel: "Quiz",
-              }, */
+              },
               {
                 label: "Flashcards",
                 href: "/flashcards",
