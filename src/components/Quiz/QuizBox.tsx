@@ -1,6 +1,7 @@
 import { ArrowRight } from "lucide-react";
 import { useQuizMeta } from "../../hooks/useQuiz";
 import { useState } from "react";
+import QuizGame from "./QuizGame";
 
 type Props = {
   themes: string[];
@@ -39,7 +40,17 @@ const QuizBox = ({ themes, limit, onStudyModeChange }: Props) => {
   if (!data) return null;
 
   if (section !== null) {
-    return <div>here</div>;
+    return (
+      <QuizGame
+        themes={themes}
+        limit={limit}
+        section={section}
+        onBack={() => {
+          onStudyModeChange(false);
+          setSection(null);
+        }}
+      />
+    );
   }
 
   return (

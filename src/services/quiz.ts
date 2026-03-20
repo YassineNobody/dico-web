@@ -27,7 +27,7 @@ export async function getQuiz(
     {
       section: number;
       totalSections: number;
-      cards: QuizQuestion[];
+      questions: QuizQuestion[];
     }
   >(ContentType.QUIZ, {
     limit,
