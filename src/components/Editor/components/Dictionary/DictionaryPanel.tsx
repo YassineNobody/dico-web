@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Editor } from "@tiptap/react";
+import { Transaction } from "@tiptap/pm/state";
 import { BookA, X } from "lucide-react";
 import { DictionaryMenu } from "./DictionaryMenu";
 import { DictionaryWordList } from "./DictionaryWordList";
@@ -12,8 +13,19 @@ type Props = {
 };
 
 export const DictionaryPanel = ({ editor }: Props) => {
-  const [isOpen, setIsOpen] = useState(editor.storage.dictionary.isOpen);
+  // ✅ FIX : toujours fermé au départ
+  const [isOpen, setIsOpen] = useState(false);
   const [mode, setMode] = useState<Mode>("public");
+
+  /*
+  =========================
+  FORCE CLOSE AU MOUNT (BONUS)
+  =========================
+  */
+
+  useEffect(() => {
+    editor.commands.closeDictionary();
+  }, [editor]);
 
   /*
   =========================
@@ -22,8 +34,12 @@ export const DictionaryPanel = ({ editor }: Props) => {
   */
 
   useEffect(() => {
-    const update = () => {
-      setIsOpen(editor.storage.dictionary.isOpen);
+    const update = ({ transaction }: { transaction: Transaction }) => {
+      const meta = transaction.getMeta("dictionary");
+
+      if (meta && typeof meta.isOpen === "boolean") {
+        setIsOpen(meta.isOpen);
+      }
     };
 
     editor.on("transaction", update);
@@ -40,16 +56,23 @@ export const DictionaryPanel = ({ editor }: Props) => {
   */
 
   useEffect(() => {
-    const isMobile = window.innerWidth < 1024;
+    const mediaQuery = window.matchMedia("(max-width: 1024px)");
 
-    if (isMobile && isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    const handleChange = () => {
+      if (mediaQuery.matches && isOpen) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "auto";
+      }
+    };
+
+    handleChange();
+
+    mediaQuery.addEventListener("change", handleChange);
 
     return () => {
       document.body.style.overflow = "auto";
+      mediaQuery.removeEventListener("change", handleChange);
     };
   }, [isOpen]);
 
@@ -58,13 +81,12 @@ export const DictionaryPanel = ({ editor }: Props) => {
   UI
   =========================
   */
-
   return (
     <>
       {/* MOBILE OVERLAY */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black/40 z-55 lg:hidden"
+          className="fixed inset-0 bg-black/40 z-40 lg:hidden"
           onClick={() => editor.commands.closeDictionary()}
         />
       )}
@@ -72,15 +94,16 @@ export const DictionaryPanel = ({ editor }: Props) => {
       {/* PANEL */}
       <div
         className={`
-        fixed lg:absolute
-        top-0 right-0
-        h-full w-full lg:w-80
-        bg-white dark:bg-neutral-900
-        border-l shadow-lg
-        transition-transform duration-300
-        ${isOpen ? "translate-x-0" : "translate-x-full"}
-        z-100 flex flex-col
-        `}
+    fixed
+    top-28 right-0
+    h-full w-full lg:w-80
+    bg-gray-50 dark:bg-neutral-900
+    border-l shadow-lg
+    transition-all duration-300
+    ${isOpen ? "translate-x-0 opacity-100" : "translate-x-full opacity-0"}
+    ${!isOpen ? "pointer-events-none" : ""}
+    z-50 flex flex-col
+  `}
       >
         {/* HEADER */}
         <div className="flex items-center justify-between p-3 border-b">
@@ -104,11 +127,9 @@ export const DictionaryPanel = ({ editor }: Props) => {
 
         {/* CONTENT */}
         <div className="flex-1 p-3 overflow-y-auto">
-          {mode !== "themes" && (
-            <DictionaryWordList editor={editor} mode={mode} />
-          )}
+          {mode !== "themes" && <DictionaryWordList mode={mode} />}
 
-          {mode === "themes" && <DictionaryThemes editor={editor} />}
+          {mode === "themes" && <DictionaryThemes />}
         </div>
       </div>
     </>

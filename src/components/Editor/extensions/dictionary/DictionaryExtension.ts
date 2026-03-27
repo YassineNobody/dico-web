@@ -14,7 +14,6 @@ declare module "@tiptap/core" {
     };
   }
 }
-
 export const DictionaryExtension = Extension.create({
   name: "dictionary",
 
@@ -31,8 +30,9 @@ export const DictionaryExtension = Extension.create({
         ({ editor }) => {
           editor.storage.dictionary.isOpen = true;
 
-          // 🔁 force update editor
-          editor.view.dispatch(editor.state.tr);
+          editor.view.dispatch(
+            editor.state.tr.setMeta("dictionary", { isOpen: true }),
+          );
 
           return true;
         },
@@ -42,8 +42,9 @@ export const DictionaryExtension = Extension.create({
         ({ editor }) => {
           editor.storage.dictionary.isOpen = false;
 
-          // 🔁 force update editor
-          editor.view.dispatch(editor.state.tr);
+          editor.view.dispatch(
+            editor.state.tr.setMeta("dictionary", { isOpen: false }),
+          );
 
           return true;
         },

@@ -4,7 +4,7 @@ import type { Word } from "../../interfaces/dico/word";
 import { ItemDico } from "./ItemDico";
 import { ToolbarDicoPublic } from "./ToolbarDicoPublic";
 
-export const DicoPublic: FC<{ words: Word[]; }> = ({ words }) => {
+export const DicoPublic: FC<{ words: Word[] }> = ({ words }) => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filterType, setFilterType] = useState<string>("all");
   const [fontSize, setFontSize] = useState<number>(18);
@@ -12,12 +12,13 @@ export const DicoPublic: FC<{ words: Word[]; }> = ({ words }) => {
     return words.filter((w) => {
       const matchesQuery =
         w.sourceWord.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        w.translationWord.toLowerCase().includes(searchQuery.toLowerCase());
+        w.translationWord.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        w.normalizedWord.toLowerCase().includes(searchQuery.toLowerCase());
       const matchesType = filterType === "all" || w.wordType === filterType;
       return matchesQuery && matchesType;
     });
   }, [words, searchQuery, filterType]);
-
+  console.log(filteredWords)
   return (
     <div className="flex-1 px-3 py-4 min-h-screen">
       {/* Toolbar */}

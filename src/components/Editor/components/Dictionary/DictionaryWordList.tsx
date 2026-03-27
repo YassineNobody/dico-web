@@ -1,16 +1,14 @@
 import { useState, useMemo } from "react";
-import { Editor } from "@tiptap/react";
 import { Search } from "lucide-react";
 import { useDico } from "../../../../hooks/useDico";
 
 type Mode = "public" | "private";
 
 type Props = {
-  editor: Editor;
   mode: Mode;
 };
 
-export const DictionaryWordList = ({ editor, mode }: Props) => {
+export const DictionaryWordList = ({ mode }: Props) => {
   const { dicoPublic, dicoPrivate } = useDico();
 
   const [query, setQuery] = useState("");
@@ -25,17 +23,10 @@ export const DictionaryWordList = ({ editor, mode }: Props) => {
     return words.filter(
       (w) =>
         w.sourceWord.toLowerCase().includes(q) ||
-        w.translationWord.toLowerCase().includes(q),
+        w.translationWord.toLowerCase().includes(q) ||
+        w.normalizedWord.toLowerCase().includes(q),
     );
   }, [query, words]);
-
-  const insertWord = (word: string) => {
-    editor
-      .chain()
-      .focus()
-      .insertContent(word + " ")
-      .run();
-  };
 
   return (
     <div className="flex flex-col gap-3">
@@ -55,17 +46,16 @@ export const DictionaryWordList = ({ editor, mode }: Props) => {
       </div>
 
       {/* WORD LIST */}
-      <div className="flex flex-col gap-1 max-h-[400px] overflow-y-auto">
+      <div className="flex flex-col gap-1 max-h-[500px] overflow-y-auto">
         {filteredWords.map((word) => (
           <button
             key={word.id}
-            onClick={() => insertWord(word.sourceWord)}
             className="text-left p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
           >
-            <div className="flex justify-between text-lg">
+            <div className="flex justify-between text">
               <span className="font-semibold">{word.sourceWord}</span>
 
-              <span className="text-gray-500 dark:text-gray-400">
+              <span className="text-gray-900 text-xl dark:text-gray-400">
                 {word.translationWord}
               </span>
             </div>
