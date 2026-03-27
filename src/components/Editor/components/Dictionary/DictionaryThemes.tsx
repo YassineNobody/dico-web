@@ -1,36 +1,16 @@
 import { useState, useMemo } from "react";
-import { Editor } from "@tiptap/react";
 import { Bookmark, Search } from "lucide-react";
 import { useWordsThemes } from "../../../../hooks/useWordsThemes";
 import { useWordsByTheme } from "../../../../hooks/useWordsByTheme";
 import { LoadingMessage } from "../../../Loader/LoadingMessage";
 
-type Props = {
-  editor: Editor;
-};
-
-export const DictionaryThemes = ({ editor }: Props) => {
+export const DictionaryThemes = () => {
   const { wordsThemes } = useWordsThemes();
 
   const [selectedTheme, setSelectedTheme] = useState<string | null>(null);
   const [query, setQuery] = useState("");
 
   const { data: words = [], isLoading } = useWordsByTheme(selectedTheme);
-
-  /*
-  =========================
-  INSERT WORD
-  =========================
-  */
-
-  const insertWord = (word: string) => {
-    editor
-      .chain()
-      .focus()
-      .insertContent(word + " ")
-      .run();
-  };
-
   /*
   =========================
   FILTER WORDS
@@ -45,7 +25,8 @@ export const DictionaryThemes = ({ editor }: Props) => {
     return words.filter(
       (w) =>
         w.sourceWord.toLowerCase().includes(q) ||
-        w.translationWord.toLowerCase().includes(q),
+        w.translationWord.toLowerCase().includes(q) ||
+        w.normalizedWord.toLowerCase().includes(q),
     );
   }, [query, words]);
 
@@ -121,17 +102,16 @@ export const DictionaryThemes = ({ editor }: Props) => {
       </div>
 
       {/* WORDS */}
-      <div className="flex flex-col gap-1 max-h-[400px] overflow-y-auto">
+      <div className="flex flex-col gap-1 max-h-[500px] overflow-y-auto">
         {filteredWords.map((word) => (
           <button
             key={word.id}
-            onClick={() => insertWord(word.sourceWord)}
             className="text-left p-2 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
           >
-            <div className="flex justify-between text-lg">
+            <div className="flex justify-between">
               <span className="font-semibold">{word.sourceWord}</span>
 
-              <span className="text-sm text-gray-500 dark:text-gray-400">
+              <span className="text-xl text-gray-800 dark:text-gray-400">
                 {word.translationWord}
               </span>
             </div>

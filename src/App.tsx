@@ -226,7 +226,7 @@ function App() {
 
                             {/* QuizPage */}
                             <Route
-                              path="/quiz"
+                              path="quiz"
                               element={
                                 <ProtectedRoute>
                                   <QuizPage />
@@ -234,7 +234,6 @@ function App() {
                               }
                             />
                           </Route>
-
                           <Route path="*" element={<NotFoundPage />} />
                         </Routes>
                       </Suspense>

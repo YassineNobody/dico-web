@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect, useRef } from "react";
 import { EditorContent, Editor } from "@tiptap/react";
 import { Toolbar } from "./ToolbarEditor";
 import { Eye, Pencil, Save } from "lucide-react";
@@ -17,6 +17,8 @@ export const EditableContent = ({ editor, folder, slugText }: Props) => {
   const [isEditing, setIsEditing] = useState(true);
   const [saving, setSaving] = useState(false);
   const [lastSaved, setLastSaved] = useState<string>("");
+  const [lastSavedAt, setLastSavedAt] = useState<Date | null>(null);
+  const [hasChanges, setHasChanges] = useState(false);
 
   const queryClient = useQueryClient();
 
@@ -37,6 +39,8 @@ export const EditableContent = ({ editor, folder, slugText }: Props) => {
 
     onSuccess: (data) => {
       setLastSaved(data.content);
+      setLastSavedAt(new Date());
+      setHasChanges(false);
 
       queryClient.setQueryData(["text", folder.id, slugText], data);
     },
@@ -49,11 +53,15 @@ export const EditableContent = ({ editor, folder, slugText }: Props) => {
   */
 
   const saveDocument = async (html: string) => {
+    if (saving) return;
+
     setSaving(true);
 
-    await mutation.mutateAsync(html);
-
-    setSaving(false);
+    try {
+      await mutation.mutateAsync(html);
+    } finally {
+      setSaving(false);
+    }
   };
 
   /*
@@ -76,14 +84,10 @@ export const EditableContent = ({ editor, folder, slugText }: Props) => {
   =========================
   */
 
-  const debouncedSave = useMemo(
-    () =>
-      debounce((html: string) => {
-        if (html !== lastSaved) {
-          saveDocument(html);
-        }
-      }, 1500),
-    [lastSaved],
+  const debouncedSaveRef = useRef(
+    debounce((html: string) => {
+      saveDocument(html);
+    }, 1500),
   );
 
   /*
@@ -95,7 +99,11 @@ export const EditableContent = ({ editor, folder, slugText }: Props) => {
   useEffect(() => {
     const updateHandler = () => {
       const html = editor.getHTML();
-      debouncedSave(html);
+
+      if (html !== lastSaved) {
+        setHasChanges(true);
+        debouncedSaveRef.current(html);
+      }
     };
 
     editor.on("update", updateHandler);
@@ -103,7 +111,19 @@ export const EditableContent = ({ editor, folder, slugText }: Props) => {
     return () => {
       editor.off("update", updateHandler);
     };
-  }, [editor, debouncedSave]);
+  }, [editor, lastSaved]);
+
+  /*
+  =========================
+  CLEANUP DEBOUNCE
+  =========================
+  */
+
+  useEffect(() => {
+    return () => {
+      debouncedSaveRef.current.cancel();
+    };
+  }, []);
 
   /*
   =========================
@@ -125,16 +145,20 @@ export const EditableContent = ({ editor, folder, slugText }: Props) => {
 
   /*
   =========================
-  SAVE BEFORE PAGE LEAVE
+  BEFORE UNLOAD
   =========================
   */
 
   useEffect(() => {
-    const handleBeforeUnload = () => {
+    const handleBeforeUnload = (e: BeforeUnloadEvent) => {
       const html = editor.getHTML();
 
       if (html !== lastSaved) {
+        debouncedSaveRef.current.flush();
         saveDocument(html);
+
+        e.preventDefault();
+        e.returnValue = "";
       }
     };
 
@@ -147,6 +171,40 @@ export const EditableContent = ({ editor, folder, slugText }: Props) => {
 
   /*
   =========================
+  FORMAT TIME AGO
+  =========================
+  */
+
+  const getTimeAgo = () => {
+    if (!lastSavedAt) return "";
+
+    const diff = Math.floor((Date.now() - lastSavedAt.getTime()) / 1000);
+
+    if (diff < 5) return "à l'instant";
+    if (diff < 60) return `il y a ${diff}s`;
+
+    const minutes = Math.floor(diff / 60);
+    if (minutes < 60) return `il y a ${minutes} min`;
+
+    const hours = Math.floor(minutes / 60);
+    return `il y a ${hours}h`;
+  };
+
+  /*
+  =========================
+  STATUS TEXT
+  =========================
+  */
+
+  const getStatus = () => {
+    if (saving) return "Sauvegarde...";
+    if (hasChanges) return "Non sauvegardé";
+    if (lastSavedAt) return `Sauvegardé ${getTimeAgo()}`;
+    return "Enregistré";
+  };
+
+  /*
+  =========================
   UI
   =========================
   */
@@ -155,7 +213,6 @@ export const EditableContent = ({ editor, folder, slugText }: Props) => {
     <div className="space-y-3">
       {/* ACTIONS */}
       <div className="flex gap-2 items-center">
-        {/* MODE EDIT / VIEW */}
         <button
           onClick={toggleMode}
           className="border px-2 py-1 rounded text-xs flex items-center gap-1"
@@ -173,7 +230,6 @@ export const EditableContent = ({ editor, folder, slugText }: Props) => {
           )}
         </button>
 
-        {/* SAVE */}
         <button
           onClick={handleSave}
           className="border px-2 py-1 rounded text-xs flex items-center gap-1"
@@ -182,10 +238,7 @@ export const EditableContent = ({ editor, folder, slugText }: Props) => {
           Sauvegarder
         </button>
 
-        {/* STATUS */}
-        <span className="text-xs text-gray-500">
-          {saving ? "Sauvegarde..." : "Enregistré"}
-        </span>
+        <span className="text-xs text-gray-500">{getStatus()}</span>
       </div>
 
       {isEditing ? (

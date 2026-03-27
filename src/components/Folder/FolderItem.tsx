@@ -3,7 +3,15 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react";
-import { ChevronDown, Eye, Folder, Pencil, Trash2 } from "lucide-react";
+import {
+  ArrowRight,
+  ChevronDown,
+  Eye,
+  Folder,
+  Pencil,
+  Trash,
+  Trash2,
+} from "lucide-react";
 import type { FolderMenu } from "../../interfaces/folder/folder";
 import { useModal } from "../../hooks/useModal";
 import { ModalUpdateFolderForm } from "../Modal/Form/ModalUpdateFolderForm";
@@ -11,6 +19,7 @@ import { useModalConfirm } from "../../hooks/useModalConfirmation";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { deleteFolder } from "../../services/folders";
 import { useNavigate } from "react-router-dom";
+import { deleteTextFolder } from "../../services/textFolder";
 
 type Props = {
   folder: FolderMenu;
@@ -23,8 +32,15 @@ export const FolderItem = ({ folder }: Props) => {
 
   const navigate = useNavigate();
 
-  const { mutateAsync: deleteMutation } = useMutation({
+  const { mutateAsync: deleteFolderMutation } = useMutation({
     mutationFn: (slug: string) => deleteFolder(slug),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["folders"] });
+    },
+  });
+
+  const { mutateAsync: deleteTextFolderMutation } = useMutation({
+    mutationFn: (slug: string) => deleteTextFolder(folder.id, slug),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ["folders"] });
     },
@@ -52,7 +68,19 @@ export const FolderItem = ({ folder }: Props) => {
 
     if (!confirmed) return;
 
-    await deleteMutation(folder.slug);
+    await deleteFolderMutation(folder.slug);
+  };
+
+  const handleDeleteTextFolder = async (title: string, slug: string) => {
+    const confirmed = await confirm({
+      title: `Supprimer le fichier ${title}`,
+      message: `Voulez-vous supprimer le fichier "${title}" ?`,
+      confirmText: "Supprimer",
+      cancelText: "Annuler",
+      icon: "error",
+    });
+    if (!confirmed) return;
+    await deleteTextFolderMutation(slug);
   };
 
   return (
@@ -112,13 +140,27 @@ export const FolderItem = ({ folder }: Props) => {
                 folder.texts.map((text) => (
                   <div
                     key={text.slug}
-                    className="cursor-pointer p-2 rounded hover:bg-gray-100 dark:hover:bg-neutral-800"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate(`/folders/${folder.slug}/${text.slug}`);
-                    }}
+                    className="p-2 rounded flex flex-row items-center justify-between hover:bg-gray-100 dark:hover:bg-neutral-800"
                   >
-                    {text.title}
+                    <span>{text.title}</span>
+                    <div className="flex flex-row gap-3">
+                      <Trash
+                        size={16}
+                        className="text-red-500 cursor-pointer"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          handleDeleteTextFolder(text.title, text.slug);
+                        }}
+                      />
+                      <ArrowRight
+                        size={16}
+                        className="cursor-pointer"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          navigate(`/folders/${folder.slug}/${text.slug}`);
+                        }}
+                      />
+                    </div>
                   </div>
                 ))
               )}

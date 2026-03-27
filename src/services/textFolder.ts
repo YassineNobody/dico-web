@@ -38,3 +38,10 @@ export async function updateTextFolder(
     `/${folderId}/texts/${slug}`,
   );
 }
+
+export async function deleteTextFolder(folderId: number, slug: string) {
+  return await api.delete<{ message: string }>(
+    ContentType.TEXT_FOLDERS,
+    `/${folderId}/texts/${slug}`,
+  );
+}
